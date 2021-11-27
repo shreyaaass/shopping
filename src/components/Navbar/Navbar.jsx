@@ -13,6 +13,7 @@ import { Link, useLocation } from "react-router-dom";
 
 import logo from "../../assets/commerce.png";
 import useStyles from "./styles";
+import { green } from "@material-ui/core/colors";
 
 const PrimarySearchAppBar = ({ totalItems }) => {
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
@@ -54,7 +55,14 @@ const PrimarySearchAppBar = ({ totalItems }) => {
   return (
     <>
       <AppBar position="fixed" className={classes.appBar} color="inherit">
-        <Toolbar>
+        <Toolbar
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-between",
+            fontSize: "1.5rem",
+          }}
+        >
           <Typography
             component={Link}
             to="/"
@@ -68,8 +76,26 @@ const PrimarySearchAppBar = ({ totalItems }) => {
               height="25px"
               className={classes.image}
             />{" "}
-            GROCCER
+            GROCERY-STOP
           </Typography>
+          <a
+            href="https://shreyaaass.github.io/exc/"
+            className="Meal"
+            style={{
+              marginRight: "30px",
+              textDecoration: "none",
+              color: "green",
+            }}
+          >
+            Meal Planner
+          </a>
+          <a
+            href="https://shreyaaass.github.io/use-food-now/"
+            className="inventory"
+            style={{ textDecoration: "none", color: "green" }}
+          >
+            Inventory
+          </a>
           <div className={classes.grow} />
           {location.pathname === "/" && (
             <div className={classes.button}>
